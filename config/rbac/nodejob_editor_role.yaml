@@ -1,0 +1,24 @@
+# permissions for end users to edit nodejobs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: nodejob-editor-role
+rules:
+- apiGroups:
+  - tool.tanx.io
+  resources:
+  - nodejobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tool.tanx.io
+  resources:
+  - nodejobs/status
+  verbs:
+  - get

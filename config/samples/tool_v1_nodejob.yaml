@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test
+---
+apiVersion: tool.tanx.io/v1
+kind: NodeJob
+metadata:
+  name: test
+  namespace: test
+spec:
+  PodSpec:
+    containers:
+      - name: test
+        image: curlimages/curl:7.68.0
+        command:
+          - "curl"
+        args:
+          - "http://www.baidu.com"
+          - "-v"
+        imagePullPolicy: IfNotPresent

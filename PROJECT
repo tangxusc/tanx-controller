@@ -1,0 +1,7 @@
+domain: tanx.io
+repo: github.com/tangxusc/tanx-controller
+resources:
+- group: tool
+  kind: NodeJob
+  version: v1
+version: "2"
